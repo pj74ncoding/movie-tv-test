@@ -1,0 +1,268 @@
+/* Small devices (landscape phones, 576px and up)  */
+@media (min-width: 576px) {
+  /* Styles for small devices */
+}
+
+@media (min-width: 500px) and (max-width: 700px) {
+  .nav-icons-left-container > span {
+    display: none;
+  }
+
+  .main-nav {
+    display: none;
+  }
+
+  .nav-bar-options-display {
+    display: flex !important;
+  }
+
+  .home-link,
+  .watchlist-link,
+  .movies-link,
+  .tv-link {
+    display: none;
+  }
+
+  .second-nav-bar {
+    display: flex;
+    gap: 2rem;
+    height: 100%;
+    align-items: center;
+  }
+}
+
+@media (min-width: 600px) {
+  .second-nav-bar {
+    gap: 2.5rem;
+  }
+}
+@media (max-width: 767px) {
+  .selected-page-logo {
+    height: clamp(1.5rem, calc(4vw + 1rem), 3rem);
+  }
+}
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  /* *Nav */
+
+  .big-screen-image-home-link {
+    display: block;
+  }
+  .fox-media-logo {
+    display: block;
+    width: clamp(3rem, calc(3vw + 1rem), 3.5rem);
+  }
+
+  .nav-bar-options-display {
+    display: flex !important;
+  }
+
+  .second-nav-bar {
+    display: none;
+  }
+
+  .nav-icons-left-container {
+    display: none;
+  }
+
+  .nav-profile-container {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  /** home */
+
+  .hero-main-container {
+    height: 65vh;
+  }
+
+  .hero-image {
+    object-fit: fill;
+  }
+  .hero-name-or-title-container {
+    font-size: 5rem;
+  }
+
+  .hero-media-type {
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+  }
+
+  .hero-overview-container {
+    gap: 0.9rem;
+    padding: 0 1.5rem;
+  }
+  .hero-overview-description-container {
+    width: 50%;
+    overflow: auto;
+  }
+  .hero-overview-description-container {
+    display: flex;
+  }
+  /* *Footer */
+  .footer-component-container {
+    display: none;
+  }
+}
+
+@media (min-width: 800px) {
+  /** Home  */
+  .hero-main-container {
+    height: 30vh;
+    background-color: rgb(133, 133, 133);
+  }
+
+  .hero-card-container {
+    justify-content: start;
+    align-items: center;
+  }
+
+  .hero-media-type {
+    font-size: 1.8rem;
+    z-index: 3;
+    left: 1.2rem;
+  }
+  .hero-image {
+    width: 40%;
+    z-index: 1;
+    margin-left: 1%;
+    border-radius: 0rem;
+    height: 98%;
+  }
+
+  .hero-overview-main-container {
+    background: linear-gradient(45deg, rgba(0, 0, 0, 0.5), 70%, rgb(0, 0, 0));
+    justify-content: center;
+    align-items: start;
+  }
+
+  .hero-name-or-title-container {
+    line-height: 3rem;
+    /* text-align: center; */
+  }
+
+  .hero-name-or-title {
+    font-size: 3rem;
+    /* text-align: center; */
+    color: #ffd35c;
+  }
+
+  .hero-overview-container {
+    width: 50%;
+    margin-left: 45.5%;
+  }
+
+  .hero-overview-description-container {
+    width: 100%;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+  }
+
+  .hero-star-and-rating-container > span {
+    font-size: 18px;
+  }
+
+  .slide-markers-container {
+    height: auto;
+    z-index: 3;
+    padding: 0;
+    margin-bottom: 4%;
+    position: absolute;
+    bottom: 0;
+  }
+
+  .slide-marker {
+    width: 0.6rem;
+    height: 0.6rem;
+  }
+
+  .selected-slide-marker {
+    width: 0.6rem;
+    height: 0.6rem;
+  }
+}
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .small-screen-fox-media-logo {
+    display: none;
+  }
+}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .nav-bar-options {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    gap: 2rem;
+  }
+
+  /** home */
+
+  .hero-main-container {
+    height: 75vh;
+  }
+
+  .hero-media-type {
+    left: 1.75rem;
+  }
+
+  .hero-name-or-title-container {
+    line-height: 3.8rem;
+  }
+
+  .hero-name-or-title {
+    font-size: 3.5rem;
+  }
+
+  .hero-overview-container {
+    width: 40%;
+    margin-left: 50.5%;
+    padding: 0;
+  }
+
+  .hero-overview {
+    font-size: 1rem;
+  }
+
+  .hero-date-and-rating-container > p {
+  }
+  .hero-date-and-rating-container > p,
+  .hero-star-and-rating-container > p {
+    font-size: 0.9rem;
+  }
+
+  .hero-star-and-rating-container > span {
+    font-size: 21px;
+  }
+
+  .hero-overview-description-container {
+    display: flex;
+  }
+
+  .slide-marker {
+    width: 0.8rem;
+    height: 0.8rem;
+  }
+
+  .selected-slide-marker {
+    width: 0.8rem;
+    height: 0.8rem;
+  }
+}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+  /* Styles for extra extra large devices */
+
+  .hero-image {
+    width: 35%;
+  }
+
+  .hero-overview-container {
+    margin-left: 47.5%;
+  }
+}
