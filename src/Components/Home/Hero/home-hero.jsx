@@ -1,23 +1,26 @@
 import { useEffect, useMemo, useState, createContext } from "react";
 import { HeroCard } from "./home-hero-card";
 
-
-
-const storedHeroMovie = JSON.parse(
-  localStorage.getItem("home-hero-movie-data"),
-);
-const storedTvData = JSON.parse(localStorage.getItem("home-hero-tv-data"));
-
-
 export const indexContext = createContext();
 export const HomeHero = () => {
-  const [topRatedMovieData, setTopRatedMovieData] = useState(storedHeroMovie);
-  const [topRatedTvData, setTopRatedTvData] = useState(storedTvData);
+  const [topRatedMovieData, setTopRatedMovieData] = useState([]);
+  const [topRatedTvData, setTopRatedTvData] = useState([]);
   const [slicedData, setSlicedData] = useState([]);
   const [mixedData, setMixedData] = useState([]);
 
+  useEffect(() => {
+    const storedHeroMovie = JSON.parse(
+      localStorage.getItem("home-hero-movie-data") || "[]",
+    );
+    const storedTvData = JSON.parse(
+      localStorage.getItem("home-hero-tv-data") || "[]",
+    );
+    setTopRatedMovieData(storedHeroMovie);
+    setTopRatedTvData(storedTvData);
+  }, []);
+
   //**================================= */
-  
+
   const slicedTopRatedTV = useMemo(
     () => topRatedTvData.slice(0, 4),
     [topRatedTvData],

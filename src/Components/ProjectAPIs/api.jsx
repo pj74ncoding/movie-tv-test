@@ -2,20 +2,18 @@ import { useEffect } from "react";
 
 //** Home Component API's */
 
-
-
 export const ProjectApis = () => {
   const topRatedMovieFetchData = async () => {
     try {
       //** apikey to use through vercel */
 
-      // const apiKey = import.meta.env.VITE_TMDB_API_KEY;
-      // const movieResponse = await fetch(
-      //   `https://api.themoviedb.org/3/trending/movie/day?api_key=${apiKey}`,
-      // );
+      const apiKey = import.meta.env.VITE_TMDB_API_KEY;
       const movieResponse = await fetch(
-        "https://api.themoviedb.org/3/movie/top_rated?api_key=5a1dbe02eaed7aed89976013dcbc8aef",
+        `https://api.themoviedb.org/3/trending/movie/day?api_key=${apiKey}`,
       );
+      // const movieResponse = await fetch(
+      //   "https://api.themoviedb.org/3/movie/top_rated?api_key=5a1dbe02eaed7aed89976013dcbc8aef",
+      // );
       const movieDataResult = await movieResponse.json();
 
       localStorage.setItem(
@@ -28,9 +26,10 @@ export const ProjectApis = () => {
   };
 
   const topRatedTVFetchData = async () => {
+    const apiKey = import.meta.env.VITE_TMDB_API_KEY;
     try {
       const TvResponse = await fetch(
-        "https://api.themoviedb.org/3/tv/top_rated?api_key=5a1dbe02eaed7aed89976013dcbc8aef",
+        `https://api.themoviedb.org/3/tv/top_rated?api_key=${apiKey}`,
       );
 
       const tvDataResult = await TvResponse.json();
