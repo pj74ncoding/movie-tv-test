@@ -1,10 +1,13 @@
 import { useEffect, useMemo, useState, createContext } from "react";
 import { HeroCard } from "./home-hero-card";
+// comment to test branch
 
 export const indexContext = createContext();
 export const HomeHero = () => {
   const [topRatedMovieData, setTopRatedMovieData] = useState([]);
   const [topRatedTvData, setTopRatedTvData] = useState([]);
+  const [trendingMovieData, setTrendingMovieData] = useState([]);
+  const [trendingTvData, setTrendingTvData] = useState([]);
   const [slicedData, setSlicedData] = useState([]);
   const [mixedData, setMixedData] = useState([]);
 
@@ -16,13 +19,23 @@ export const HomeHero = () => {
     const storedHeroMovie = JSON.parse(
       localStorage.getItem("home-hero-movie-data") || "[]",
     );
-    const storedTvData = JSON.parse(
+    const storedHeroTv = JSON.parse(
       localStorage.getItem("home-hero-tv-data") || "[]",
     );
-    setTopRatedMovieData(storedHeroMovie);
-    setTopRatedTvData(storedTvData);
-  }, []);
 
+    const storedTrendingMovie = JSON.parse(
+      localStorage.getItem("home-trending-movies-data") || "[]",
+    );
+
+    const storedTrendingTv = JSON.parse(
+      localStorage.getItem("home-trending-tv-data") || "[]",
+    );
+    setTopRatedMovieData(storedHeroMovie);
+    setTopRatedTvData(storedHeroTv);
+    setTrendingMovieData(storedTrendingMovie);
+    setTrendingTvData(storedTrendingTv);
+  }, []);
+  console.log("trendingTvData", trendingTvData);
   //**================================= */
 
   const slicedTopRatedTV = useMemo(
