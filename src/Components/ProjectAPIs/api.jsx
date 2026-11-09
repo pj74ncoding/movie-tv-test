@@ -9,7 +9,7 @@ export const ProjectApis = () => {
 
       const apiKey = import.meta.env.VITE_TMDB_API_KEY;
       const movieResponse = await fetch(
-        `https://api.themoviedb.org/3/trending/movie/day?api_key=${apiKey}`,
+        `https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}`,
       );
       // const movieResponse = await fetch(
       //   "https://api.themoviedb.org/3/movie/top_rated?api_key=5a1dbe02eaed7aed89976013dcbc8aef",
