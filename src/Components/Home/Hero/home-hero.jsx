@@ -9,6 +9,10 @@ export const HomeHero = () => {
   const [mixedData, setMixedData] = useState([]);
 
   useEffect(() => {
+    // const storedHeroMovie = JSON.parse(
+    //   localStorage.getItem("home-hero-movie-data") || "[]",
+    // );
+
     const storedHeroMovie = JSON.parse(
       localStorage.getItem("home-hero-movie-data") || "[]",
     );
