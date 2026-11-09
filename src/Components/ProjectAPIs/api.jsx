@@ -41,16 +41,57 @@ export const ProjectApis = () => {
     }
   };
 
+  const movieTrendingFetchData = async () => {
+    try {
+      const movieResponse = await fetch(
+        "https://api.themoviedb.org/3/trending/movie/day?api_key=5a1dbe02eaed7aed89976013dcbc8aef",
+      );
+      const movieDataResult = await movieResponse.json();
+      localStorage.setItem(
+        "home-trending-movies-data",
+        JSON.stringify(movieDataResult.results),
+      );
+    } catch (error) {
+      console.warn("The movieTrendingFetchData is: ", error);
+    }
+  };
+
+  const tvTrendingFetchData = async () => {
+    try {
+      const movieResponse = await fetch(
+        "https://api.themoviedb.org/3/trending/tv/day?api_key=5a1dbe02eaed7aed89976013dcbc8aef",
+      );
+      const tvDataResult = await movieResponse.json();
+      localStorage.setItem(
+        "home-trending-tv-data",
+        JSON.stringify(tvDataResult.results),
+      );
+    } catch (error) {
+      console.warn("The movieTrendingFetchData is: ", error);
+    }
+  };
+
   useEffect(() => {
     if (!localStorage.getItem("home-hero-movie-data")) {
       localStorage.setItem("home-hero-movie-data", JSON.stringify([]));
     }
+
     if (!localStorage.getItem("home-hero-tv-data")) {
       localStorage.setItem("home-hero-tv-data", JSON.stringify([]));
     }
 
+    if (!localStorage.getItem("home-trending-movies-data")) {
+      localStorage.setItem("home-trending-movies-data", JSON.stringify([]));
+    }
+
+    if (!localStorage.getItem("home-trending-tv-data")) {
+      localStorage.setItem("home-trending-tv-data", JSON.stringify([]));
+    }
+
     topRatedMovieFetchData();
     topRatedTVFetchData();
+    movieTrendingFetchData();
+    tvTrendingFetchData();
   }, []);
 
   return <></>;
